@@ -94,6 +94,6 @@ else:
         os.makedirs(outdir)
     params = [(indir, outdir, k.split('/')[-1].split('.')[0]) for k in glob('{}/*.story'.format(indir))]
     print('processing {} files...'.format(len(params)))
-    pool = Pool(multiprocessing.cpu_counts())
+    pool = Pool(multiprocessing.cpu_count())
     pool.map(extract_highlight, params, 1000)
     pool.close()
