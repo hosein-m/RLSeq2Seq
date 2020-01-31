@@ -9,7 +9,7 @@
 from glob import glob
 from unidecode import unidecode
 import multiprocessing
-from multiprocessing import Pool, cpu_counts
+from multiprocessing import Pool
 import os, sys
 from newspaper import Article # require python 3 for this
 
@@ -86,7 +86,7 @@ if mode == 'article':
     params = [(article_dir, title_dir, k) for k in glob('{}/*.html'.format(indir))]
     print('processing {} files...'.format(len(params)))
 
-    pool = Pool(cpu_counts())
+    pool = Pool(multiprocessing.cpu_count())
     pool.map(run, params, 1000)
     pool.close()
 else:
