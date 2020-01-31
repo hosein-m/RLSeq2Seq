@@ -8,6 +8,7 @@
 
 from glob import glob
 from unidecode import unidecode
+import multiprocessing
 from multiprocessing import Pool, cpu_counts
 import os, sys
 from newspaper import Article # require python 3 for this
