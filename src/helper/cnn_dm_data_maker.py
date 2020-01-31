@@ -7,6 +7,7 @@ from glob import glob
 import spacy
 nlp = spacy.load('en')
 import errno
+import multiprocessing
 from multiprocessing import Pool
 from unidecode import unidecode
 
