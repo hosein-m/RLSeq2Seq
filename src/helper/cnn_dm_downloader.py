@@ -37,7 +37,7 @@ def remove_non_ascii(text):
 def run(param):
     (article_dir, title_dir, html_path) = param
     try:
-        raw_html = open(html_path, encoding="ascii", errors="surrogateescape").read().strip()
+        raw_html = open(html_path, encoding="utf-8", errors="surrogateescape").read().strip()
     except:
         raw_html = open(html_path, encoding=encoding_detector(html_path), errors="surrogateescape").read().strip()
 
